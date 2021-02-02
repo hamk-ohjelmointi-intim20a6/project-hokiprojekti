@@ -10,7 +10,7 @@ namespace hokiprojekti
     {
         static void Main(string[] args)
         {
-            //Tähän tulee päävalikko
+            
         }
     }
 }
