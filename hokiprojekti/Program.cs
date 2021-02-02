@@ -10,9 +10,7 @@ namespace hokiprojekti
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Jee!");
-            Console.WriteLine("Paina mitä vaan sulkeaksesi konsolin");
-            Console.ReadKey();
+            
         }
     }
 }
