@@ -8,5 +8,8 @@ namespace hokiprojekti
 {
     class Generointi_1v1
     {
+        
+        
+        
     }
 }
