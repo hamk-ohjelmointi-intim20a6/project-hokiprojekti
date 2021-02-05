@@ -8,23 +8,35 @@ namespace hokiprojekti
 {
     class RoundRobin
     {
-        public void Lista()
+        public void Robin(List<string> testilista, int rounds)
         {
-            List<string> testiLista = new List<string>();
-            testiLista.Add("Pekka");
-            testiLista.Add("Liisa");
-            testiLista.Add("Martti");
-            testiLista.Add("Maija");
-            return;
-        }
+            int players;
+            players = testilista.Count();
+            string nimi;
+            int n = 0;
 
-        public void Robin()
-        {
-            for (var i = 0; i < 8; i++)
+            while (n < rounds)
             {
-                Console.WriteLine($"{testiLista.Next()},");
+
+
+                for (var i = 1; i < players; i++)
+                {
+                    nimi = testilista[testilista.Count - 1];
+                    testilista.Remove(testilista[testilista.Count - 1]);
+                    testilista.Insert(1, nimi);
+
+                    foreach (string pelaaja in testilista)
+                    {
+
+                        Console.WriteLine(pelaaja);
+                    }
+
+
+
+                    Console.ReadLine();
+                }
+                n++;
             }
         }
-
     }
 }
