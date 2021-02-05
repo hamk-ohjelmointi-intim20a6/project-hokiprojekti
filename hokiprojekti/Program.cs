@@ -13,20 +13,55 @@ namespace hokiprojekti
             // Konsolin otsikko
             Console.Title = "Änäri-äppi";
 
-            // Kysytään käyttäjältä aloitetaanko peli vai suljetaanko konsoli. 
-            // Antamalla "1" ohjelma jatkuu, mikä tahansa muu merkki sulkee konsolin.
+            bool isRunning = true;
+
+            while (isRunning)
+            {
+                string komento = PyydäMerkkiä();
+
+                isRunning = AloitetaankoUusiPeliVaiLopetetaanko(komento);
+
+                if (komento != "1")
+                {
+                    continue;
+                }
+
+                AloitaUusiPeli();
+
+                Console.WriteLine("Paina mitä vaan nappia sulkeaksesi konsolin");
+                Console.ReadKey();
+                isRunning = false;
+            }
+        }
+        public static string PyydäMerkkiä()
+        {
             Console.WriteLine("Tervetuloa Änäri-äppiin");
             Console.WriteLine("1 Aloita uusi peli\n0 Sulje konsoli");
             Console.WriteLine("Syötä 1/0");
             string komento = Console.ReadLine();
-            if (komento.StartsWith("1"))
+            return komento;
+        }
+        public static bool AloitetaankoUusiPeliVaiLopetetaanko(string komento)
+        {
+            if (komento == "1")
             {
                 Console.Clear();
-                // tänne tulis sitten ohjelman jatkohommat
-                Console.WriteLine("Jee aloitetaan uusi peli!");
-                Console.WriteLine("Ohjelma sulkeutuu kun painat jotain nappia..");
-                Console.ReadKey();
+                return true;
             }
+            else if (komento == "0")
+            {
+                return false;
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Syötit virheellisen merkin, yritä uudestaan.");
+                return true;
+            }
+        }
+        public static void AloitaUusiPeli()
+        {
+            Console.WriteLine("Aloitetaan uusi peli!");
         }
     }
 }
