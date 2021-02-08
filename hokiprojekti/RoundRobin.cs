@@ -17,7 +17,7 @@ namespace hokiprojekti
 
             while (n < rounds)
             {
-
+                Console.WriteLine("Kierros {0}", n+1);
                 //kierrätä listan elementit listassa yhden kierroksen verran, i = mones listaversio
                 for (var i = 1; i < players; i++)
                 {
@@ -55,6 +55,7 @@ namespace hokiprojekti
         {
             int ListanPituus; //listan pituudesta saadaan indeksit
             ListanPituus = testilista.Count();
+            Console.WriteLine("{0} ottelu", x);
             for (int i = 0; i < ListanPituus; i++)
             {
                 if (i % 2 == 0) //jos indeksi parillinen -> kotiottelu, vastustaja on listan seuraava pariton indeksi
@@ -78,6 +79,7 @@ namespace hokiprojekti
         {
             int ListanPituus;
             ListanPituus = testilista.Count();
+            Console.WriteLine("{0} ottelu", x);
             for (int i = 0; i < ListanPituus; i++)
             {
                 if (i % 2 == 0) //jos indeksi parillinen -> parillinen indeksi vieraspeli, vastustaja on listan seuraava pariton indeksi
