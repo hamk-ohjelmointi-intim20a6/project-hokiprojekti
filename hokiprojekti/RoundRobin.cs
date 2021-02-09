@@ -12,7 +12,6 @@ namespace hokiprojekti
         {
             int players;
             players = testilista.Count();
-            string nimi;
             int n = 0;
 
             while (n < rounds)
@@ -21,44 +20,80 @@ namespace hokiprojekti
                 //kierrätä listan elementit listassa yhden kierroksen verran, i = mones listaversio
                 for (var i = 1; i < players; i++)
                 {
-                    nimi = testilista[testilista.Count - 1]; //luo uusi elementti listaan, joka on sama kuin listan viimeinen elementti
-                    testilista.Remove(testilista[testilista.Count - 1]); //poista listasta viimeinen elementti
-                    testilista.Insert(1, nimi); //lisää uusi elementti (pohja listan viimeinen elementti) listan kohtaan 2 eli indeksi 1
-
-                    ParillinenPariton(testilista, i); //metodi joka päättää koti- ja vieraspelin
                     
-
+                    ParillinenPariton(testilista, i); 
+                    
                 }
                 n++;
             }
         }
 
-        //Metodi valitsee listaversion numerosta riippuen koti ja vieraspelin
+        //Metodi, joka päättää listan muutokset, jotka vaikuttaa koti/vieraspeleihin 
         public void ParillinenPariton(List<string> testilista, int i)
         {
             var x = i; //x = listaversio
-            if (x % 2 == 0) //jos listaversio on kahdella jaollinen, parillisilla listan indekseillä  kotiottelu
+
+            //jos listaversio on kahdella jaollinen, listan indeksi[0] on ensimmäisenä
+            if (x % 2 == 0) 
             {
-                
-                ParillinenKoti(testilista, x);
+
+                ParillinenVersio(testilista, x);
             }
 
-            if (x % 2 == 1) //jos listaversio on kahdella jaollinen, parittomilla listan indekseillä  kotiottelu
+            //jos listaversio ei ole kahdella jaollinen, listan indeksi[0] on toisena
+            if (x % 2 == 1) 
             {
-                ParitonKoti(testilista, x);
+                ParitonVersio(testilista, x);
             }
 
         }
 
-        //Listan parilliset indekseillä on kotiottelu
-        public void ParitonKoti(List<string> testilista, int x)
+        public void ParitonVersio (List<string> testilista, int x)
         {
-            int ListanPituus; //listan pituudesta saadaan indeksit
+            string nimi;
+
+            //luo uusi elementti listaan, joka on sama kuin listan viimeinen elementti
+            nimi = testilista[testilista.Count - 1]; 
+            testilista.Remove(testilista[testilista.Count - 1]); //poista listasta viimeinen elementti
+            testilista.Insert(0, nimi); //lisää uusi elementti (pohja listan viimeinen elementti) listan kohtaan 1 eli indeksi 0 */
+
+            //tulosta
+            ParillinenKoti(testilista, x);
+        }
+
+        public void ParillinenVersio(List<string> testilista, int x)
+        {
+            string nimi;
+
+            //luo uusi elementti listaan, joka on sama kuin listan viimeinen elementti
+            nimi = testilista[testilista.Count - 1];
+            testilista.Remove(testilista[testilista.Count - 1]);
+            testilista.Insert(0, nimi);
+
+            //listan ensimmäinen arvo (parittomilla kierroksilla 1 ja parillisilla 2), vaihtaa paikkoja indeksien 0 ja 1 välillä
+            nimi = testilista[2]; 
+            testilista.Remove(testilista[2]);
+            testilista.Insert(0, nimi);
+
+            //tulosta
+            ParillinenKoti(testilista, x);
+        }
+
+        //Listan parilliset indekseillä on kotiottelu
+        public void ParillinenKoti(List<string> testilista, int x)
+        {
+            //listan pituudesta saadaan indeksit
+            int ListanPituus; 
             ListanPituus = testilista.Count();
+            
+            //ottelujen määrä / kierros = pelaajien määrä - 1
             Console.WriteLine("{0} ottelu", x);
+
+            //käy listan indeksit läpi
             for (int i = 0; i < ListanPituus; i++)
             {
-                if (i % 2 == 0) //jos indeksi parillinen -> kotiottelu, vastustaja on listan seuraava pariton indeksi
+                //jos indeksi parillinen -> kotiottelu, vastustaja on listan seuraava pariton indeksi
+                if (i % 2 == 0) 
                 {
                     Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i+1]);
                 }
@@ -75,7 +110,7 @@ namespace hokiprojekti
         }
 
         //Listan parittomilla indekseillä on kotiottelu
-        public void ParillinenKoti(List<string> testilista, int x)
+        /*public void ParitonKoti(List<string> testilista, int x)
         {
             int ListanPituus;
             ListanPituus = testilista.Count();
@@ -95,6 +130,6 @@ namespace hokiprojekti
             }
 
             Console.ReadLine();
-        }
+        }*/
     }
 }
