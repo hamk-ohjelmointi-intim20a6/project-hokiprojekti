@@ -9,25 +9,17 @@ namespace hokiprojekti
     public class Kierrokset
     {
 
-        public void Kierrosluku()
+        public int Kierrosluku()
         {
             Console.WriteLine("valitse pelattavien kierrosten määrä: ");
             int syöte = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("valitsit " + syöte + " kierrosta");
 
-            if (syöte == 1)
-            {
-                Console.WriteLine("tästä alkaa yhden kierroksen koodi");
-            }
-
-            else
-            {
-                Console.WriteLine("valittu kierrosluku oli jotain muuta kuin 1");
-            }
+            return syöte;
 
             //jos syöte on jotain muuta kuin numeroita, ohjelma kaatuu
 
-           Console.ReadLine();
+            
             
 
         }
