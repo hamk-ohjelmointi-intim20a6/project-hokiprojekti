@@ -8,19 +8,19 @@ namespace hokiprojekti
 {
     class Päävalikko
     {
-        public void AlkuValikko()
+        public static void AlkuValikko()
         {
             string komento = PyydäMerkkiä();
             AloitetaankoUusiTurnausVaiLopetetaanko(komento);
         }
-        public string PyydäMerkkiä()
+        private static string PyydäMerkkiä()
         {
             Console.WriteLine("Tervetuloa Änäri-äppiin");
             Console.WriteLine("1 Aloita uusi turnaus\n0 Sulje konsoli");
             string komento = Console.ReadLine();
             return komento;
         }
-        public void AloitetaankoUusiTurnausVaiLopetetaanko(string komento)
+        private static void AloitetaankoUusiTurnausVaiLopetetaanko(string komento)
         {
             if (komento == "0")
             {

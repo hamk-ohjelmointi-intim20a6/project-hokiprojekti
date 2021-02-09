@@ -10,12 +10,11 @@ namespace hokiprojekti
     {
         static void Main(string[] args)
         {
-            Päävalikko päävalikko = new Päävalikko();
 
             // Konsolin otsikko
             Console.Title = "Änäri-äppi";
 
-            päävalikko.AlkuValikko();
+            Päävalikko.AlkuValikko();
             AloitaUusiPeli();
         }
 
