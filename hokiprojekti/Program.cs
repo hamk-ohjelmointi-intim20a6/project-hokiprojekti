@@ -10,7 +10,12 @@ namespace hokiprojekti
     {
         static void Main(string[] args)
         {
-            //Testi commit
+            int pelaajienMäärä = Pelaajat.pelaajienMäärä();
+           
+            List<string> listaPelaajista = Pelaajat.listaPelaajista(pelaajienMäärä);
+            
+            Console.ReadKey();
+            
         }
     }
 }
