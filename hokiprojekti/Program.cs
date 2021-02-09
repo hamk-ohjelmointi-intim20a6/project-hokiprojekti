@@ -16,6 +16,7 @@ namespace hokiprojekti
 
             Päävalikko.AlkuValikko();
             AloitaUusiPeli();
+
         }
 
         public static void AloitaUusiPeli()
@@ -27,8 +28,6 @@ namespace hokiprojekti
             int pelaajienMäärä = Pelaajat.pelaajienMäärä();
            
             List<string> listaPelaajista = Pelaajat.listaPelaajista(pelaajienMäärä);
-            
-            Console.ReadKey();
             
         }
     }
