@@ -9,22 +9,44 @@ namespace hokiprojekti
     class RoundRobin
     {
         public void Robin(List<string> testilista, int rounds)
-        {
-            int players;
-            players = testilista.Count();
+        {           
             int n = 0;
 
             while (n < rounds)
             {
-                Console.WriteLine("Kierros {0}", n+1);
-                //kierrätä listan elementit listassa yhden kierroksen verran, i = mones listaversio
-                for (var i = 1; i < players; i++)
+                if (testilista.Count % 2 == 1)
                 {
-                    
-                    ParillinenPariton(testilista, i); 
-                    
+                    LisaaPelaaja(testilista);
                 }
+
+                else if (testilista.Count % 2 == 0)
+                {
+                    Console.WriteLine("Kierros {0}", n + 1);
+                    LuoRobin(testilista);
+                }
+
                 n++;
+            }
+        }
+
+        //Lisää parittomaan määrään pelaajia yksi varjopelaaja
+        public void LisaaPelaaja (List<string> testilista)
+        {
+            string nimi;
+            nimi = "0";
+            testilista.Insert(0, nimi);
+        }
+
+        //kierrätä listan elementit listassa yhden kierroksen verran
+        public void LuoRobin(List<string> testilista)
+        {
+            int players;
+            players = testilista.Count();
+
+            // i = mones listaversio
+            for (var i = 1; i < players; i++)
+            {
+                ParillinenPariton(testilista, i);
             }
         }
 
@@ -36,7 +58,6 @@ namespace hokiprojekti
             //jos listaversio on kahdella jaollinen, listan indeksi[0] on ensimmäisenä
             if (x % 2 == 0) 
             {
-
                 ParillinenVersio(testilista, x);
             }
 
@@ -60,6 +81,7 @@ namespace hokiprojekti
             //tulosta
             Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
             otteluohjelma1v1.ParillinenKoti(testilista, x);
+             
         }
 
         public void ParillinenVersio(List<string> testilista, int x)

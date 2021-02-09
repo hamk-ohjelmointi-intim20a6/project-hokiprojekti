@@ -24,6 +24,12 @@ namespace hokiprojekti
                 //jos indeksi parillinen -> kotiottelu, vastustaja on listan seuraava pariton indeksi
                 if (i % 2 == 0)
                 {
+                    if (testilista[i] == "0" || testilista[i + 1] == "0")
+                    {
+                        LuovutettuPeli(testilista, i);
+                    }
+
+                    else
                     Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i + 1]);
                 }
 
@@ -31,11 +37,22 @@ namespace hokiprojekti
                 {
                     continue;
                 }
-
-
             }
 
             Console.ReadLine();
+        }
+
+        public void LuovutettuPeli (List<string> testilista, int i)
+        {
+            if (testilista[i] == "0") 
+            {
+                Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i + 1]);
+            }
+
+            else if (testilista[i +1] == "0")
+            {
+                Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: none", testilista[i]);
+            }
         }
 
         //EI TARVITA

@@ -17,6 +17,7 @@ namespace hokiprojekti
             testilista.Add("2");
             testilista.Add("3");
             testilista.Add("4");
+            testilista.Add("5");
             int rounds;
             rounds = 3;
             roundRobin.Robin(testilista, rounds);
