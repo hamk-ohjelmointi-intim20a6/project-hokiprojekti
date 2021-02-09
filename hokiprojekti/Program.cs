@@ -19,7 +19,7 @@ namespace hokiprojekti
             testilista.Add("4");
             testilista.Add("5");
             int rounds;
-            rounds = 3;
+            rounds = 4;
             roundRobin.Robin(testilista, rounds);
             /*List<Pelaaja> listapelaajista = otteluOhjelma1v1.Lista();
             otteluOhjelma1v1.Printti(listapelaajista);*/

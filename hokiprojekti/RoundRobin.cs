@@ -17,11 +17,12 @@ namespace hokiprojekti
                 if (testilista.Count % 2 == 1)
                 {
                     LisaaPelaaja(testilista);
+                    n--;
                 }
 
                 else if (testilista.Count % 2 == 0)
                 {
-                    Console.WriteLine("Kierros {0}", n + 1);
+                    Console.WriteLine("Kierros {0}", n+1);
                     LuoRobin(testilista);
                 }
 

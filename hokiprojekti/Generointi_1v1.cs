@@ -55,28 +55,5 @@ namespace hokiprojekti
             }
         }
 
-        //EI TARVITA
-        //Listan parittomilla indekseillä on kotiottelu
-        /*public void ParitonKoti(List<string> testilista, int x)
-        {
-            int ListanPituus;
-            ListanPituus = testilista.Count();
-            Console.WriteLine("{0} ottelu", x);
-            for (int i = 0; i < ListanPituus; i++)
-            {
-                if (i % 2 == 0) //jos indeksi parillinen -> parillinen indeksi vieraspeli, vastustaja on listan seuraava pariton indeksi
-                {
-                    Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i +1], testilista[i]);
-                }
-
-                if (i % 2 == 1)
-                {
-                    continue;
-                }
-
-            }
-
-            Console.ReadLine();
-        }*/
     }
 }
