@@ -8,20 +8,25 @@ namespace hokiprojekti
 {
     class RoundRobin
     {
-        public void Robin(List<string> testilista, int rounds)
+        public void Robin(List<string> alkuperainenlista, int rounds)
         {           
             int n = 0;
 
             while (n < rounds)
             {
-                if (testilista.Count % 2 == 1)
+                List<string> testilista = alkuperainenlista.OrderBy(x => Guid.NewGuid()).ToList();
+
+                if (alkuperainenlista.Count % 2 == 1)
                 {
                     LisaaPelaaja(testilista);
-                    n--;
+                    Console.WriteLine("Kierros {0}", n + 1);
+                    LuoRobin(testilista);
+                    
                 }
 
-                else if (testilista.Count % 2 == 0)
+                else if (alkuperainenlista.Count % 2 == 0)
                 {
+                    
                     Console.WriteLine("Kierros {0}", n+1);
                     LuoRobin(testilista);
                 }
