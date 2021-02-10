@@ -11,7 +11,7 @@ namespace hokiprojekti
         static void Main(string[] args)
         {
             // Konsolin otsikko
-            Console.Title = "Änäri-äppi";
+           Console.Title = "Änäri-äppi";
 
             Päävalikko.AlkuValikko();
 
@@ -19,11 +19,14 @@ namespace hokiprojekti
 
             List<string> listaPelaajista = Pelaajat.listaPelaajista(pelaajienMäärä);
 
+            //valitaan haluttu kierrosmäärä peliin
             Kierrokset kierrokset = new Kierrokset();
             kierrokset.Kierrosluku();
 
+            //valitaan turnaustyyppi: 1vs1 tai 2vs2
             Turnaustyyppi turnaustyyppi = new Turnaustyyppi();
             turnaustyyppi.Turnausvalinta();
+
 
             RoundRobin roundRobin = new RoundRobin();
             
@@ -31,7 +34,7 @@ namespace hokiprojekti
             int rounds;
             rounds = 4;
             roundRobin.Robin(listaPelaajista, rounds);
-
+            
 
         }
     }
