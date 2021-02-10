@@ -8,19 +8,58 @@ namespace hokiprojekti
 {
     class Generointi_1v1
     {
+        public void Robin(List<string> testilista, int rounds)
+        {
+            int n = 0;
+            RoundRobin testi = new RoundRobin();
+            while (n < rounds)
+            {
+                
+                if (testilista.Count % 2 == 1)
+                {
+                     
+                    testi.LisaaPelaaja(testilista);
+                    n--;
+                }
+
+                else if (testilista.Count % 2 == 0)
+                {
+                    
+                    Console.WriteLine("Kierros {0}", n + 1);
+                    int players;
+                    players = testilista.Count();
+
+                    // i = mones listaversio
+                    for (var i = 1; i < players; i++)
+                    {
+                        RoundRobin luoRobin = new RoundRobin();
+                        var Testi = luoRobin.LuoRobin(testilista, i);
+                        List<string> UusiLista = Testi.Lista;
+                        int ListaVersio = Testi.ListaVersio;
+                    }
+                        
+                    
+                }
+
+                n++;
+            }
+        }
+
+        
         //Listan parilliset indekseillä on kotiottelu
-        public void ParillinenKoti(List<string> testilista, int x)
+        public void ParillinenKoti(List<string> testilista)
         {
             //listan pituudesta saadaan indeksit
             int ListanPituus;
             ListanPituus = testilista.Count();
 
             //ottelujen määrä / kierros = pelaajien määrä - 1
-            Console.WriteLine("{0} ottelu", x);
+            Console.WriteLine("{0} ottelu", ListanPituus);
 
             //käy listan indeksit läpi
             for (int i = 0; i < ListanPituus; i++)
             {
+                
                 //jos indeksi parillinen -> kotiottelu, vastustaja on listan seuraava pariton indeksi
                 if (i % 2 == 0)
                 {

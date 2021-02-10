@@ -51,6 +51,7 @@
     <Compile Include="RoundRobin.cs" />
     <Compile Include="Päävalikko.cs" />
     <Compile Include="Turnaustyyppi.cs" />
+    <Compile Include="UusiLista.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

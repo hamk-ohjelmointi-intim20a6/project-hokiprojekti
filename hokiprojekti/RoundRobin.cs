@@ -8,69 +8,63 @@ namespace hokiprojekti
 {
     class RoundRobin
     {
-        public void Robin(List<string> testilista, int rounds)
-        {           
-            int n = 0;
-
-            while (n < rounds)
-            {
-                if (testilista.Count % 2 == 1)
-                {
-                    LisaaPelaaja(testilista);
-                    n--;
-                }
-
-                else if (testilista.Count % 2 == 0)
-                {
-                    Console.WriteLine("Kierros {0}", n+1);
-                    LuoRobin(testilista);
-                }
-
-                n++;
-            }
-        }
+        
 
         //Lisää parittomaan määrään pelaajia yksi varjopelaaja
-        public void LisaaPelaaja (List<string> testilista)
+        public List<string> LisaaPelaaja (List<string> testilista)
         {
             string nimi;
             nimi = "0";
             testilista.Insert(0, nimi);
+            return testilista;
         }
 
         //kierrätä listan elementit listassa yhden kierroksen verran
-        public void LuoRobin(List<string> testilista)
+        public UusiLista LuoRobin(List<string> testilista, int i)
         {
-            int players;
-            players = testilista.Count();
+            //int players;
+            //players = testilista.Count();
 
-            // i = mones listaversio
-            for (var i = 1; i < players; i++)
-            {
-                ParillinenPariton(testilista, i);
+            //// i = mones listaversio
+            //for (var i = 1; i < players; i++)
+            //{
+                if (i % 2 == 0)
+                {
+                    UusiLista haeLista = new UusiLista(); 
+                    haeLista.Lista = ParillinenVersio(testilista), 
+                    haeLista.ListaVersio = i
+                    ;
+                    
+                }
+
+                //jos listaversio ei ole kahdella jaollinen, listan indeksi[0] on toisena
+                if (i % 2 == 1)
+                {
+                UusiLista haeLista = new UusiLista();
+                
+                
+                   haeLista.Lista = ParitonVersio(testilista),
+                   haeLista.ListaVersio = i
+                ;
             }
+                
+
+            //}
+            
+
         }
 
         //Metodi, joka päättää listan muutokset, jotka vaikuttaa koti/vieraspeleihin 
-        public void ParillinenPariton(List<string> testilista, int i)
-        {
-            var x = i; //x = listaversio
+        //public List<string> ParillinenPariton(List<string> testilista, int i)
+        //{
+        //    var x = i; //x = listaversio
 
-            //jos listaversio on kahdella jaollinen, listan indeksi[0] on ensimmäisenä
-            if (x % 2 == 0) 
-            {
-                ParillinenVersio(testilista, x);
-            }
+        //    //jos listaversio on kahdella jaollinen, listan indeksi[0] on ensimmäisenä
+            
 
-            //jos listaversio ei ole kahdella jaollinen, listan indeksi[0] on toisena
-            if (x % 2 == 1) 
-            {
-                ParitonVersio(testilista, x);
-            }
+        //}
 
-        }
-
-        public void ParitonVersio (List<string> testilista, int x)
+        public List<string> ParitonVersio (List<string> testilista)
         {
             string nimi;
 
@@ -78,14 +72,14 @@ namespace hokiprojekti
             nimi = testilista[testilista.Count - 1]; 
             testilista.Remove(testilista[testilista.Count - 1]); //poista listasta viimeinen elementti
             testilista.Insert(0, nimi); //lisää uusi elementti (pohja listan viimeinen elementti) listan kohtaan 1 eli indeksi 0 */
-
-            //tulosta
-            Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
-            otteluohjelma1v1.ParillinenKoti(testilista, x);
+            return testilista;
+            ////tulosta
+            //Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
+            //otteluohjelma1v1.ParillinenKoti(testilista, x);
              
         }
 
-        public void ParillinenVersio(List<string> testilista, int x)
+        public List<string> ParillinenVersio(List<string> testilista)
         {
             string nimi;
 
@@ -99,9 +93,11 @@ namespace hokiprojekti
             testilista.Remove(testilista[2]);
             testilista.Insert(0, nimi);
 
-            //tulosta
-            Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
-            otteluohjelma1v1.ParillinenKoti(testilista, x);
+            return testilista;
+
+            ////tulosta
+            //Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
+            //otteluohjelma1v1.ParillinenKoti(testilista, x);
         }
 
     }

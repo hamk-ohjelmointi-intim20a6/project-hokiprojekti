@@ -29,11 +29,11 @@ namespace hokiprojekti
 
 
             RoundRobin roundRobin = new RoundRobin();
-            
+            Generointi_1v1 generoi = new Generointi_1v1();
          
             int rounds;
             rounds = 4;
-            roundRobin.Robin(listaPelaajista, rounds);
+            generoi.Robin(listaPelaajista, rounds);
             
 
         }
