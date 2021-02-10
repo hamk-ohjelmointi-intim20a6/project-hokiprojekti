@@ -32,9 +32,9 @@ namespace hokiprojekti
             
          
             int rounds;
-            rounds = 4;
+            rounds = 2;
             roundRobin.Robin(listaPelaajista, rounds);
-            
+            Tallennus.TallennaJSON();
 
         }
     }

@@ -31,6 +31,8 @@ namespace hokiprojekti
 
                     else
                     Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i + 1]);
+                    // *********** TALLENNUS ***********
+                    Tallennus.LisääListalle(testilista[i], testilista[i + 1]);
                 }
 
                 if (i % 2 == 1) // jos indeksi pariton jatka
@@ -47,11 +49,15 @@ namespace hokiprojekti
             if (testilista[i] == "0") 
             {
                 Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i + 1]);
+                // *********** TALLENNUS ***********
+                Tallennus.LisääListalle("none", testilista[i + 1]);
             }
 
             else if (testilista[i +1] == "0")
             {
                 Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: none", testilista[i]);
+                // *********** TALLENNUS ***********
+                Tallennus.LisääListalle(testilista[i], "none");
             }
         }
 
