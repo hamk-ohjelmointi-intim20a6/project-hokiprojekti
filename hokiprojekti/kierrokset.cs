@@ -11,20 +11,43 @@ namespace hokiprojekti
 
         public int Kierrosluku()
         {
-            Console.WriteLine("valitse pelattavien kierrosten määrä: ");
-            int syöte = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("valitsit " + syöte + " kierrosta");
+            bool isRunning = true;
 
-            return syöte;
+            while (isRunning)
+            {
 
-            //jos syöte on jotain muuta kuin numeroita, ohjelma kaatuu
+                Console.WriteLine("Valitse pelattavien kierrosten määrä ja paina ENTER: ");
+                bool tarkistaLuku = int.TryParse(Console.ReadLine(), out int kierrosmäärä);
+                Console.Clear();
 
-            
-            
 
+                if (tarkistaLuku)
+                {
+                    Console.WriteLine("Valitsit " + kierrosmäärä + " kierrosta. Onko haluttu kierrosmäärä oikein?");
+                    Console.WriteLine("k/e");
+                    string onkoOK = Console.ReadLine();
+
+
+                    if (onkoOK == "k" | onkoOK == "K")
+                    {
+                        Console.Clear();
+                        return kierrosmäärä;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        isRunning = true;
+                    }
+
+                }
+
+
+
+            }
+            return 0;
         }
 
-       
-        
+
+
     }
 }
