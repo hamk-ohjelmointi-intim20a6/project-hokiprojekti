@@ -21,7 +21,7 @@ namespace hokiprojekti
 
             //valitaan haluttu kierrosmäärä peliin
             Kierrokset kierrokset = new Kierrokset();
-            kierrokset.Kierrosluku();
+            
 
             //valitaan turnaustyyppi: 1vs1 tai 2vs2
             Turnaustyyppi turnaustyyppi = new Turnaustyyppi();
@@ -32,7 +32,7 @@ namespace hokiprojekti
             
          
             int rounds;
-            rounds = 4;
+            rounds = kierrokset.Kierrosluku(); ;
             roundRobin.Robin(listaPelaajista, rounds);
             
 
