@@ -11,35 +11,73 @@ namespace hokiprojekti
 
         public int Turnausvalinta()
         {
-            Console.WriteLine("valitse turnaustyyppi:");
-            Console.WriteLine("1. 1 vs 1 -turnaus");
-            Console.WriteLine("2. 2 vs 2 -turnaus");
 
-            int syöte = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("valitsit turnaustyypiksi " + syöte);
+            bool isRunning = true;
 
-            if (syöte == 1)
+            while (isRunning)
             {
-                Console.WriteLine("tästä alkaa 1 vs 1 turnaustyypin koodi");
-                return 1;
+                Console.WriteLine("Valitse turnaustyyppi numerolla:");
+                Console.WriteLine("1.\t 1 vs 1 -turnaus");
+                Console.WriteLine("2.\t 2 vs 2 -turnaus");
+                bool tarkistaLuku = int.TryParse(Console.ReadLine(), out int valinta);
+                Console.Clear();
+
+
+                if (tarkistaLuku)
+                {
+                    if (valinta == 1)
+                    {
+                        Console.WriteLine("Valitsit turnaustyypiksi 1 vs 1 -turnauksen. Onko valinta ok?");
+                        Console.WriteLine("k/e");
+                        string onkoOk = Console.ReadLine();
+
+
+                        if (onkoOk == "k" | onkoOk == "K")
+                        {
+                            Console.Clear();
+                            return valinta;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            isRunning = true;
+                        }
+                    }
+                    else if (valinta == 2)
+                    {
+                        Console.WriteLine("Valitsit turnaustyypiksi 2 vs 2 -turnauksen. Onko valinta ok?");
+                        Console.WriteLine("k/e");
+                        string onkoOk = Console.ReadLine();
+
+
+                        if (onkoOk == "k" | onkoOk == "K")
+                        {
+                            Console.Clear();
+                            return valinta;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            isRunning = true;
+                        }
+                    }
+
+
+                }
+
+                else
+                {
+                    Console.Clear();
+                    isRunning = true;
+                }
+
+
+
+
+
+
             }
-
-            else if (syöte == 2)
-            {
-                Console.WriteLine("tästä alkaa 2 vs 2 turnaustyypin koodi");
-                return 2;
-            }
-
-            else
-            {
-                Console.WriteLine("huppis, ei muuta vaihtoehtoa!");
-                return 0;
-                // aloita luuppi alusta
-            }
-
-            //jos syöte on jotain muuta kuin numeroita, ohjelma kaatuu
-
-            
+            return 0;
         }
 
     }
