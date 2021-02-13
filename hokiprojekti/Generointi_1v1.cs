@@ -13,51 +13,52 @@ namespace hokiprojekti
         {
             //listan pituudesta saadaan indeksit
             int ListanPituus;
-            ListanPituus = testilista.Count();
+            ListanPituus = testilista.Count() - 1;
+            int otteluParit = testilista.Count() / 2;
 
             //ottelujen määrä / kierros = pelaajien määrä - 1
             Console.WriteLine("{0} ottelu", x);
 
-            //käy listan indeksit läpi
-            for (int i = 0; i < ListanPituus; i++)
+            //käy yhden kierroksen otteluparit läpi
+            for (int i = 0; i < otteluParit; i++)
             {
-                //jos indeksi parillinen -> kotiottelu, vastustaja on listan seuraava pariton indeksi
-                if (i % 2 == 0)
-                {
-                    if (testilista[i] == "0" || testilista[i + 1] == "0")
-                    {
-                        LuovutettuPeli(testilista, i);
-                    }
 
-                    else
+                if (i == 0 && testilista[i] == "0" || testilista[i + 1] == "0")
+                {
+                    LuovutettuPeli(testilista, i);
+                }
+
+                else if (i == 0 && testilista[i] != "0" && testilista[i + 1] != "0")
+                {
                     Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i + 1]);
-                    // *********** TALLENNUS ***********
                     Tallennus.LisääListalle(testilista[i], testilista[i + 1]);
                 }
 
-                if (i % 2 == 1) // jos indeksi pariton jatka
+                else
                 {
-                    continue;
+                    int vieras = i + 1;
+
+                    Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}",
+                    testilista[ListanPituus],
+                    testilista[vieras]);
+                    Tallennus.LisääListalle(testilista[ListanPituus], testilista[vieras]);
+
+                    ListanPituus -= 1;
                 }
             }
-
             Console.ReadLine();
         }
 
-        public void LuovutettuPeli (List<string> testilista, int i)
+        public void LuovutettuPeli(List<string> testilista, int i)
         {
-            if (testilista[i] == "0") 
+            if (testilista[i] == "0")
             {
-                Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i + 1]);
-                // *********** TALLENNUS ***********
-                Tallennus.LisääListalle("none", testilista[i + 1]);
+                Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i + 1]); ;
             }
 
-            else if (testilista[i +1] == "0")
+            else if (testilista[i + 1] == "0")
             {
                 Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: none", testilista[i]);
-                // *********** TALLENNUS ***********
-                Tallennus.LisääListalle(testilista[i], "none");
             }
         }
 
