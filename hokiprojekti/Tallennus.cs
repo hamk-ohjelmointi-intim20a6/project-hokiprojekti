@@ -50,5 +50,45 @@ namespace hokiprojekti
                 tiedosto.WriteLine(JSONmerkkijono);
             }
         }
+
+        // Tätä metodia käytetään pääohjelmassa
+        public static void TallennaTXT()
+        {
+
+
+
+
+            // Tässä päätetään mihin kirjoitetaan
+            using (StreamWriter writetext = new StreamWriter("ottelut.txt"))
+            {
+                // Tässä päätetään mitä kirjoitetaan
+                foreach (Ottelu ottelu in ottelut)
+                {
+                    writetext.WriteLine(ottelu);
+                }
+            }
+
+
+        }
+
+        // Tässä koodi JSONin lukemiseen.
+
+        //private static List<Ottelu> LueJSON()
+        //{
+        //    string pelitLuettuTiedostosta = File.ReadAllText("ottelut.json");
+
+        //    List<Ottelu> peliParit = JsonConvert.DeserializeObject<List<Ottelu>>(pelitLuettuTiedostosta);
+
+        //    Console.WriteLine("Luetaan JSON-tiedostosta");
+
+        //    foreach (Ottelu ottelu in peliParit)
+        //    {
+        //        Console.WriteLine("*************************");
+        //        Console.Write($"Peli nro. {ottelu.OtteluNro} ");
+        //        Console.WriteLine($"{ottelu.Koti} vs {ottelu.Vieras}");
+        //    }
+
+        //    return peliParit;
+        //}
     }
 }

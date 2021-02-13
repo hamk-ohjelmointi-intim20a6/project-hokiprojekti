@@ -16,7 +16,7 @@ namespace hokiprojekti
 
         public override string ToString()
         {
-            return $"Pelinro: {OtteluNro} Koti: {Koti} Vieras: {Vieras}";
+            return $"Peli nro. {OtteluNro}: {Koti} vs {Vieras}";
         }
     }
 }
