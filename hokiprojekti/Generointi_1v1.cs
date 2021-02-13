@@ -36,9 +36,27 @@ namespace hokiprojekti
                 else
                     {
                         int vieras = i + 1;
-                        Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}",
-                        testilista[ListanPituus],
-                        testilista[vieras]);
+                    
+                        //if (testilista[vieras] == "0" || testilista[ListanPituus] == "0")
+                        //{
+                        //    if (testilista[vieras] == "0")
+                        //    {
+                        //        Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: none",
+                        //        testilista[ListanPituus]);
+                        //    }
+                        //    else if (testilista[ListanPituus] == "0")
+                        //    {
+                        //        Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}",
+                        //        testilista[vieras]);
+                        //    }
+                        //}
+
+                        //else {
+                            Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}",
+                            testilista[ListanPituus],
+                            testilista[vieras]);
+                       //}  
+                        
                         ListanPituus -= 1;
                     }            
             }
