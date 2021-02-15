@@ -23,21 +23,29 @@ namespace hokiprojekti
 
                 if (tarkistaLuku)
                 {
-                    Console.WriteLine("Valitsit " + kierrosmäärä + " kierrosta. Onko haluttu kierrosmäärä oikein?");
-                    Console.WriteLine("k/e");
-                    string onkoOK = Console.ReadLine();
+                    if(kierrosmäärä>0){ 
+                        Console.WriteLine("Valitsit " + kierrosmäärä + " kierrosta. Onko haluttu kierrosmäärä oikein?");
+                        Console.WriteLine("k/e");
+                        string onkoOK = Console.ReadLine();
 
 
-                    if (onkoOK == "k" | onkoOK == "K")
-                    {
-                        Console.Clear();
-                        return kierrosmäärä;
+                        if (onkoOK == "k" | onkoOK == "K")
+                        {
+                            Console.Clear();
+                            return kierrosmäärä;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            isRunning = true;
+                        }
                     }
                     else
                     {
                         Console.Clear();
                         isRunning = true;
                     }
+
 
                 }
 
