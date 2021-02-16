@@ -14,6 +14,7 @@ namespace hokiprojekti
             //listan pituudesta saadaan indeksit
             int ListanPituus;
             ListanPituus = testilista.Count() - 1;
+            //kuinka monta kertaa tulostusloopi tehdään = pelaajien määrä jaettuna 2
             int otteluParit = testilista.Count() / 2;
 
             //ottelujen määrä / kierros = pelaajien määrä - 1
@@ -22,17 +23,17 @@ namespace hokiprojekti
             //käy yhden kierroksen otteluparit läpi
             for (int i = 0; i < otteluParit; i++)
             {
-
+                //jos ensimmäinen pari ja varjopelaaja ensimmäinen tai toinen
                 if (i == 0 && testilista[i] == "0" || testilista[i + 1] == "0")
                     {
                         LuovutettuPeli(testilista, i);               
                     }
-
+                //jos listan ensimmäinen pari
                 else if (i == 0 && testilista[i] != "0" && testilista[i + 1] != "0")
                     {
                         Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i + 1]);
                     }
-
+                //jos muu kuin listan ensimmäinen
                 else
                     {
                         int vieras = i + 1;
