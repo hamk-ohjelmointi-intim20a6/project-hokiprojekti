@@ -14,8 +14,7 @@ namespace hokiprojekti
             //listan pituudesta saadaan indeksit
             int ListanPituus;
             ListanPituus = testilista.Count() - 1;
-            int otteluParit = testilista.Count() / 2;
-            ListanPituus = testilista.Count() - 1;
+            
             //kuinka monta kertaa tulostusloopi tehdään = pelaajien määrä jaettuna 2
             int otteluParit = testilista.Count() / 2;
 
