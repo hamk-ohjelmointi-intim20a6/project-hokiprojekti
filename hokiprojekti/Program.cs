@@ -34,8 +34,9 @@ namespace hokiprojekti
             int rounds;
             rounds = 2;
             roundRobin.Robin(listaPelaajista, rounds);
-            Tallennus.TallennaJSON();
 
+            Tallennus.TallennaJSON();
+            Tallennus.TallennaTXT();
         }
     }
 }
