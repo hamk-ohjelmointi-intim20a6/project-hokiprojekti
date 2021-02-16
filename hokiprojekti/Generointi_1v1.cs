@@ -24,48 +24,28 @@ namespace hokiprojekti
             //käy yhden kierroksen otteluparit läpi
             for (int i = 0; i < otteluParit; i++)
             {
-
+                //jos ensimmäinen pari ja varjopelaaja ensimmäinen tai toinen
                 if (i == 0 && testilista[i] == "0" || testilista[i + 1] == "0")
                 {
                     LuovutettuPeli(testilista, i);
                 }
-
+                //jos listan ensimmäinen pari
                 else if (i == 0 && testilista[i] != "0" && testilista[i + 1] != "0")
                 {
                     Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i + 1]);
                     Tallennus.LisääListalle(testilista[i], testilista[i + 1]);
                 }
-
+                //jos muu kuin listan ensimmäinen
                 else
                 {
                     int vieras = i + 1;
-
                     Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}",
                     testilista[ListanPituus],
                     testilista[vieras]);
                     Tallennus.LisääListalle(testilista[ListanPituus], testilista[vieras]);
-
                     ListanPituus -= 1;
                 }
-                //jos ensimmäinen pari ja varjopelaaja ensimmäinen tai toinen
-                if (i == 0 && testilista[i] == "0" || testilista[i + 1] == "0")
-                    {
-                        LuovutettuPeli(testilista, i);               
-                    }
-                //jos listan ensimmäinen pari
-                else if (i == 0 && testilista[i] != "0" && testilista[i + 1] != "0")
-                    {
-                        Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i + 1]);
-                    }
-                //jos muu kuin listan ensimmäinen
-                else
-                    {
-                        int vieras = i + 1;                  
-                        Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}",
-                        testilista[ListanPituus],
-                        testilista[vieras]);                                             
-                        ListanPituus -= 1;
-                    }            
+                  
             }
             Console.ReadLine();
         }
@@ -74,8 +54,7 @@ namespace hokiprojekti
         {
             if (testilista[i] == "0")
             {
-                Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i + 1]); ;
-                Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i+1]); ;            
+                Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i + 1]); ;                        
             }
 
             else if (testilista[i + 1] == "0")
