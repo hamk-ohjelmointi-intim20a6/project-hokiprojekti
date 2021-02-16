@@ -14,6 +14,8 @@ namespace hokiprojekti
             //listan pituudesta saadaan indeksit
             int ListanPituus;
             ListanPituus = testilista.Count() - 1;
+            int otteluParit = testilista.Count() / 2;
+            ListanPituus = testilista.Count() - 1;
             //kuinka monta kertaa tulostusloopi tehdään = pelaajien määrä jaettuna 2
             int otteluParit = testilista.Count() / 2;
 
@@ -23,6 +25,29 @@ namespace hokiprojekti
             //käy yhden kierroksen otteluparit läpi
             for (int i = 0; i < otteluParit; i++)
             {
+
+                if (i == 0 && testilista[i] == "0" || testilista[i + 1] == "0")
+                {
+                    LuovutettuPeli(testilista, i);
+                }
+
+                else if (i == 0 && testilista[i] != "0" && testilista[i + 1] != "0")
+                {
+                    Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i + 1]);
+                    Tallennus.LisääListalle(testilista[i], testilista[i + 1]);
+                }
+
+                else
+                {
+                    int vieras = i + 1;
+
+                    Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}",
+                    testilista[ListanPituus],
+                    testilista[vieras]);
+                    Tallennus.LisääListalle(testilista[ListanPituus], testilista[vieras]);
+
+                    ListanPituus -= 1;
+                }
                 //jos ensimmäinen pari ja varjopelaaja ensimmäinen tai toinen
                 if (i == 0 && testilista[i] == "0" || testilista[i + 1] == "0")
                     {
@@ -46,14 +71,15 @@ namespace hokiprojekti
             Console.ReadLine();
         }
 
-        public void LuovutettuPeli (List<string> testilista, int i)
+        public void LuovutettuPeli(List<string> testilista, int i)
         {
             if (testilista[i] == "0")
             {
+                Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i + 1]); ;
                 Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i+1]); ;            
             }
 
-            else if (testilista[i +1] == "0")
+            else if (testilista[i + 1] == "0")
             {
                 Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: none", testilista[i]);
             }

@@ -35,6 +35,9 @@ namespace hokiprojekti
             rounds = kierrokset.Kierrosluku(); ;
             roundRobin.Robin(listaPelaajista, rounds);
 
+            Tallennus.TallennaJSON();
+            Tallennus.TallennaTXT();
+
 
         }
     }
