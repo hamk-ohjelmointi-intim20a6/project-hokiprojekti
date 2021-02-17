@@ -8,6 +8,7 @@ namespace hokiprojekti
 {
     class Ottelu
     {
+        public int KierrosNro { get; set; }
         public int OtteluNro { get; set; }
 
         public string Koti { get; set; }
@@ -16,7 +17,7 @@ namespace hokiprojekti
 
         public override string ToString()
         {
-            return $"Peli nro. {OtteluNro}: {Koti} vs {Vieras}";
+            return $"Kierros nro. {KierrosNro}, peli nro. {OtteluNro}: {Koti} vs {Vieras}";
         }
     }
 }

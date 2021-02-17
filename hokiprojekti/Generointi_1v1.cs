@@ -9,7 +9,7 @@ namespace hokiprojekti
     class Generointi_1v1
     {
         //Listan parilliset indekseillä on kotiottelu
-        public void ParillinenKoti(List<string> testilista, int x)
+        public void ParillinenKoti(List<string> testilista, int x, int KierrosNro)
         {
             //listan pituudesta saadaan indeksit
             int ListanPituus;
@@ -33,7 +33,7 @@ namespace hokiprojekti
                 else if (i == 0 && testilista[i] != "0" && testilista[i + 1] != "0")
                 {
                     Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i + 1]);
-                    Tallennus.LisääListalle(testilista[i], testilista[i + 1]);
+                    Tallennus.LisääListalle(KierrosNro, testilista[i], testilista[i + 1]);
                 }
                 //jos muu kuin listan ensimmäinen
                 else
@@ -42,12 +42,11 @@ namespace hokiprojekti
                     Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}",
                     testilista[ListanPituus],
                     testilista[vieras]);
-                    Tallennus.LisääListalle(testilista[ListanPituus], testilista[vieras]);
+                    Tallennus.LisääListalle(KierrosNro, testilista[ListanPituus], testilista[vieras]);
                     ListanPituus -= 1;
                 }
                   
             }
-            Console.ReadLine();
         }
 
         public void LuovutettuPeli(List<string> testilista, int i)
