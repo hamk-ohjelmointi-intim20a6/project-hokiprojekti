@@ -42,9 +42,28 @@ namespace hokiprojekti
                     Console.WriteLine("Annoit virheellisen syötteen\n");
                     AlkuValikko();
                 }
-
             }
+        }
 
+        public static void JatketaankoVaiLopetetaanko()
+        {
+            Console.WriteLine("1 Päävalikkoon\n0 Sulje sovellus");
+            string komento = Console.ReadLine();
+
+            if (komento == "0")
+            {
+                Environment.Exit(0);
+            }
+            else if (komento == "1")
+            {
+                Console.Clear();
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Annoit virheellisen syötteen");
+                JatketaankoVaiLopetetaanko();
+            }
         }
         private static void VanhojenOhjelmienSelaus()
         {

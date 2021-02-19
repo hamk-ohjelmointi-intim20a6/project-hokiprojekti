@@ -13,25 +13,28 @@ namespace hokiprojekti
             // Konsolin otsikko
             Console.Title = "Änäri-äppi";
 
-            Päävalikko.AlkuValikko();
+            while (true)
+            {
+                Päävalikko.AlkuValikko();
 
-            int pelaajienMäärä = Pelaajat.pelaajienMäärä();
+                int pelaajienMäärä = Pelaajat.pelaajienMäärä();
 
-            List<string> listaPelaajista = Pelaajat.listaPelaajista(pelaajienMäärä);
+                List<string> listaPelaajista = Pelaajat.listaPelaajista(pelaajienMäärä);
 
-            //valitaan haluttu kierrosmäärä peliin
-            Kierrokset kierrokset = new Kierrokset();
+                //valitaan haluttu kierrosmäärä peliin
+                Kierrokset kierrokset = new Kierrokset();
 
-            //valitaan turnaustyyppi: 1vs1 tai 2vs2
-            Turnaustyyppi turnaustyyppi = new Turnaustyyppi();
-            turnaustyyppi.Turnausvalinta();
+                //valitaan turnaustyyppi: 1vs1 tai 2vs2
+                Turnaustyyppi turnaustyyppi = new Turnaustyyppi();
+                turnaustyyppi.Turnausvalinta();
 
-            RoundRobin roundRobin = new RoundRobin();
+                RoundRobin roundRobin = new RoundRobin();
 
-            int rounds = kierrokset.Kierrosluku(); ;
-            roundRobin.Robin(listaPelaajista, rounds);
+                int rounds = kierrokset.Kierrosluku(); ;
+                roundRobin.Robin(listaPelaajista, rounds);
 
-            Tallennus.TallennaJSON();
+                Tallennus.TallennaJSON();
+            }
         }
     }
 }

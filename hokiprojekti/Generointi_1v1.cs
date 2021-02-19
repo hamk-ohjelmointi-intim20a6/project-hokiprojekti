@@ -19,7 +19,7 @@ namespace hokiprojekti
             int otteluParit = testilista.Count() / 2;
 
             //ottelujen määrä / kierros = pelaajien määrä - 1
-            Console.WriteLine("{0} ottelu", x);
+            //Console.WriteLine("{0} ottelu", x);
 
             //käy yhden kierroksen otteluparit läpi
             for (int i = 0; i < otteluParit; i++)
@@ -32,16 +32,16 @@ namespace hokiprojekti
                 //jos listan ensimmäinen pari
                 else if (i == 0 && testilista[i] != "0" && testilista[i + 1] != "0")
                 {
-                    Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i + 1]);
+                    //Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}", testilista[i], testilista[i + 1]);
                     Tallennus.LisääListalle(KierrosNro, testilista[i], testilista[i + 1]);
                 }
                 //jos muu kuin listan ensimmäinen
                 else
                 {
                     int vieras = i + 1;
-                    Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}",
-                    testilista[ListanPituus],
-                    testilista[vieras]);
+                    //Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: {1}",
+                    //testilista[ListanPituus],
+                    //testilista[vieras]);
                     Tallennus.LisääListalle(KierrosNro, testilista[ListanPituus], testilista[vieras]);
                     ListanPituus -= 1;
                 }
@@ -53,12 +53,12 @@ namespace hokiprojekti
         {
             if (testilista[i] == "0")
             {
-                Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i + 1]); ;                        
+                //Console.WriteLine("Kotiottelu: none" + " " + "Vieras: {0}", testilista[i + 1]); ;                        
             }
 
             else if (testilista[i + 1] == "0")
             {
-                Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: none", testilista[i]);
+                //Console.WriteLine("Kotiottelu: {0}" + " " + "Vieras: none", testilista[i]);
             }
         }
 

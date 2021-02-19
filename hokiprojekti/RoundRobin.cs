@@ -19,7 +19,7 @@ namespace hokiprojekti
                 if (alkuperainenlista.Count % 2 == 1)
                 {
                     LisaaPelaaja(testilista);
-                    Console.WriteLine("Kierros {0}", n + 1);
+                    //Console.WriteLine("Kierros {0}", n + 1);
                     LuoRobin(testilista, n + 1);
                     
                 }
@@ -27,12 +27,13 @@ namespace hokiprojekti
                 else if (alkuperainenlista.Count % 2 == 0)
                 {
                     
-                    Console.WriteLine("Kierros {0}", n+1);
+                    //Console.WriteLine("Kierros {0}", n+1);
                     LuoRobin(testilista, n + 1);
                 }
 
                 n++;
             }
+            Console.WriteLine("Generointi onnistui");
         }
 
         //Lisää parittomaan määrään pelaajia yksi varjopelaaja
