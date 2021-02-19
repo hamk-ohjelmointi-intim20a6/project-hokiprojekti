@@ -12,7 +12,7 @@ namespace hokiprojekti
         {           
             int n = 0;
 
-            // Tyhjennettävä tämä lista, jotta ohjelma toimii tehdessä useamman otteuhojelman sulkematta välissä konsolia.
+            // Tyhjennettävä tämä lista, jotta ohjelma toimii tehdessä useamman otteluohjelman sulkematta välissä konsolia.
             Tallennus.ottelut.Clear();
 
             while (n < rounds)
