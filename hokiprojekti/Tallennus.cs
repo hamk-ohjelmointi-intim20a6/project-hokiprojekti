@@ -72,24 +72,28 @@ namespace hokiprojekti
         }
 
         // Tässä koodi JSONin lukemiseen.
-
-        public static List<Ottelu> LueJSON()
+        public static void LueJSON()
         {
             Console.WriteLine("Anna vanhan otteluohjelman nimi (ilman tiedostopäätettä)");
             string tiedostonNimi = Console.ReadLine();
 
-            string pelitLuettuTiedostosta = File.ReadAllText($"{tiedostonNimi}.json");
-
-            List<Ottelu> peliParit = JsonConvert.DeserializeObject<List<Ottelu>>(pelitLuettuTiedostosta);
-
-            Console.WriteLine($"Luetaan {tiedostonNimi}.json");
-
-            foreach (Ottelu ottelu in peliParit)
+            try
             {
-                Console.WriteLine(ottelu);
-            }
+                string pelitLuettuTiedostosta = File.ReadAllText($"{tiedostonNimi}.json");
 
-            return peliParit;
+                List<Ottelu> peliParit = JsonConvert.DeserializeObject<List<Ottelu>>(pelitLuettuTiedostosta);
+
+                Console.WriteLine($"Luetaan {tiedostonNimi}.json");
+
+                foreach (Ottelu ottelu in peliParit)
+                {
+                    Console.WriteLine(ottelu);
+                }
+            }
+            catch
+            {
+                Console.WriteLine($"Ei löytynyt tiedostoa nimeltä {tiedostonNimi}");
+            }
         }
     }
 }

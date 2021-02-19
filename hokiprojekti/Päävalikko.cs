@@ -56,8 +56,6 @@ namespace hokiprojekti
 
             Console.Clear();
             AlkuValikko();
-
-
         }
     }
 }
