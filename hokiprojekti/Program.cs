@@ -25,8 +25,8 @@ namespace hokiprojekti
                 Kierrokset kierrokset = new Kierrokset();
 
                 //valitaan turnaustyyppi: 1vs1 tai 2vs2
-                Turnaustyyppi turnaustyyppi = new Turnaustyyppi();
-                turnaustyyppi.Turnausvalinta();
+                /*Turnaustyyppi turnaustyyppi = new Turnaustyyppi();
+                turnaustyyppi.Turnausvalinta();*/
 
                 RoundRobin roundRobin = new RoundRobin();
 
