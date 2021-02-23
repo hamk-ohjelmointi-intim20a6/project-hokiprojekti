@@ -106,10 +106,7 @@ namespace hokiprojekti
         public void PoistaPuolet(List<string> pelaajalista3, List<string> pelaajalista4, List<string> pelaajalista5, List<string> pelaajalista6)
         {
             
-            pelaajalista3.RemoveRange(pelaajalista3.Count / 2 - 1, pelaajalista3.Count / 2);
-            pelaajalista4.RemoveRange(pelaajalista4.Count / 2 - 1, pelaajalista4.Count / 2);
-            pelaajalista5.RemoveRange(pelaajalista5.Count / 2 - 1, pelaajalista5.Count / 2);
-            pelaajalista6.RemoveRange(pelaajalista6.Count / 2 - 1, pelaajalista6.Count / 2);
+           
             TulostaOtteluohjelma(pelaajalista3, pelaajalista4, pelaajalista5, pelaajalista6);
         }
 
