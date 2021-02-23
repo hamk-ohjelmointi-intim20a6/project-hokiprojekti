@@ -56,6 +56,7 @@ namespace hokiprojekti
             }
             else if (komento == "1")
             {
+                Console.Clear();
                 return;
             }
             else

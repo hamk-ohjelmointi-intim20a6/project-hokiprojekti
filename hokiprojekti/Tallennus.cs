@@ -41,6 +41,12 @@ namespace hokiprojekti
                 Console.WriteLine("Huomaathan, että mikäli annetun niminen tiedosto löytyy jo, ylikirjoittaa ohjelma sen päälle.");
                 string tiedostonNimi = Console.ReadLine();
 
+                // Tiedoston nimi voi periaatteessa olla tyhjä tai sisältää välilyöntejä, mutta ei hyväksytä sitä silti
+                if (string.IsNullOrEmpty(tiedostonNimi) || tiedostonNimi.Contains(" "))
+                {
+                    throw new Exception();
+                }
+
                 Console.WriteLine($"Annoit nimeksi {tiedostonNimi}.json, ok? (k/e)");
                 string onkoOk = Console.ReadLine();
 
@@ -48,12 +54,6 @@ namespace hokiprojekti
                 if (!(onkoOk == "k" || onkoOk == "K"))
                 {
                     TallennaJSON();
-                }
-
-                // Tiedoston nimi voi periaatteessa olla tyhjä tai sisältää välilyöntejä, mutta ei hyväksytä sitä silti
-                if (string.IsNullOrEmpty(tiedostonNimi) || tiedostonNimi.Contains(" "))
-                {
-                    throw new Exception();
                 }
 
                 // Luodaan merkkijono tuolla hienolla convertterilla,
@@ -76,7 +76,7 @@ namespace hokiprojekti
                 Console.Clear();
                 Console.WriteLine($"Tallennettu tiedostot {tiedostonNimi}.json ja {tiedostonNimi}.txt.");
                 Päävalikko.JatketaankoVaiLopetetaanko();
-                Console.Clear();
+                Console.Write("");
             }
             // Jos tallennus ei onnistunut
             catch
