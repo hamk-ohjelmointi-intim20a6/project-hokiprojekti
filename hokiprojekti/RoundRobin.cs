@@ -11,24 +11,27 @@ namespace hokiprojekti
         public void Robin(List<string> alkuperainenlista, int rounds)
         {           
             int n = 0;
+            List<string> randomlista = alkuperainenlista.OrderBy(x => Guid.NewGuid()).ToList();
+            List<string> testilista = new List<string>();
 
             while (n < rounds)
             {
-                List<string> testilista = alkuperainenlista.OrderBy(x => Guid.NewGuid()).ToList();
+                testilista.Clear();
+                testilista = randomlista;
 
                 if (alkuperainenlista.Count % 2 == 1)
                 {
                     LisaaPelaaja(testilista);
                     Console.WriteLine("Kierros {0}", n + 1);
-                    LuoRobin(testilista);
-                    
+                    LuoRobin(testilista, n);
+
                 }
 
                 else if (alkuperainenlista.Count % 2 == 0)
                 {
                     
                     Console.WriteLine("Kierros {0}", n+1);
-                    LuoRobin(testilista);
+                    LuoRobin(testilista, n);
                 }
 
                 n++;
@@ -44,7 +47,7 @@ namespace hokiprojekti
         }
 
         //kierrätä listan elementit listassa yhden kierroksen verran
-        public void LuoRobin(List<string> testilista)
+        public void LuoRobin(List<string> testilista, int n)
         {
             int players;
             players = testilista.Count();
@@ -53,6 +56,10 @@ namespace hokiprojekti
             for (var i = 1; i < players; i++)
             {
                 ParillinenPariton(testilista, i);
+                
+                //tulosta
+                Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
+                otteluohjelma1v1.ParillinenKoti(testilista, i, n);
             }
         }
 
@@ -65,6 +72,7 @@ namespace hokiprojekti
             if (x % 2 == 0)
             {
                 ParillinenVersio(testilista, x);
+                
             }
 
             //jos listaversio ei ole kahdella jaollinen, listan indeksi[0] on toisena
@@ -84,9 +92,7 @@ namespace hokiprojekti
             testilista.Remove(testilista[testilista.Count - 1]); //poista listasta viimeinen elementti
             testilista.Insert(0, nimi); //lisää uusi elementti (pohja listan viimeinen elementti) listan kohtaan 1 eli indeksi 0 */
 
-            //tulosta
-            Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
-            otteluohjelma1v1.ParillinenKoti(testilista, x);
+            
 
         }
 
@@ -104,9 +110,9 @@ namespace hokiprojekti
             testilista.Remove(testilista[2]);
             testilista.Insert(0, nimi);
 
-            //tulosta
-            Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
-            otteluohjelma1v1.ParillinenKoti(testilista, x);
+            ////tulosta
+            //Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
+            //otteluohjelma1v1.ParillinenKoti(testilista, x);
         }
 
     }

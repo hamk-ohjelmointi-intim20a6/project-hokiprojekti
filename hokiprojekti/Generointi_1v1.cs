@@ -39,6 +39,8 @@ namespace hokiprojekti
                         //käy yhden kierroksen otteluparit läpi
             for (int i = 0; i < otteluParit; i++)
             {
+
+                
                 //jos ensimmäinen pari ja varjopelaaja ensimmäinen tai toinen
                 if (i == 0 && testilista[i] == "0" || testilista[i + 1] == "0")
                 {
