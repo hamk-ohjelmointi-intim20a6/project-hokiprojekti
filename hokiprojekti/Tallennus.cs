@@ -55,35 +55,35 @@ namespace hokiprojekti
                 {
                     TallennaJSON();
                 }
-
-                // Luodaan merkkijono tuolla hienolla convertterilla,
-                // eli käytetään sitä ylempänä otteluista tehtyä listaa ja muutetaan se JSON-muotoiseksi merkkijonopötköksi,
-                // jonka nimi nyt on JSONmerkkijono
-                string JSONmerkkijono = JsonConvert.SerializeObject(ottelut);
-
-                // Tässä käytetään taas jotain hienoa valmista kaavaa millä tää tehdään.
-                // Määritellään vaan tiedoston polku ja nimi tonne perään. Me ei nyt laiteta polkua,
-                // eli se tallentuu vaan kunkin omalle koneelle kansioon hokiprojekti > hokiprojekti > bin > Debug
-                // Ja siis GIT ei seuraa tota kansioo, eli noi tiedostot ei tallennu gittiin.
-                using (StreamWriter tiedosto = new StreamWriter($"{tiedostonNimi}.json", false)) // false = päällekirjoittaa tiedoston
+                else 
                 {
-                    // Tässä kerrotaan mitä siihen tiedostoon halutaan kirjoittaa,
-                    // ja sehän on se yllämääritelty JSONmerkkijono
-                    tiedosto.WriteLine(JSONmerkkijono);
+                    // Luodaan merkkijono tuolla hienolla convertterilla,
+                    // eli käytetään sitä ylempänä otteluista tehtyä listaa ja muutetaan se JSON-muotoiseksi merkkijonopötköksi,
+                    // jonka nimi nyt on JSONmerkkijono
+                    string JSONmerkkijono = JsonConvert.SerializeObject(ottelut);
+
+                    // Tässä käytetään taas jotain hienoa valmista kaavaa millä tää tehdään.
+                    // Määritellään vaan tiedoston polku ja nimi tonne perään. Me ei nyt laiteta polkua,
+                    // eli se tallentuu vaan kunkin omalle koneelle kansioon hokiprojekti > hokiprojekti > bin > Debug
+                    // Ja siis GIT ei seuraa tota kansioo, eli noi tiedostot ei tallennu gittiin.
+                    using (StreamWriter tiedosto = new StreamWriter($"{tiedostonNimi}.json", false)) // false = päällekirjoittaa tiedoston
+                    {
+                        // Tässä kerrotaan mitä siihen tiedostoon halutaan kirjoittaa,
+                        // ja sehän on se yllämääritelty JSONmerkkijono
+                        tiedosto.WriteLine(JSONmerkkijono);
+                    }
+                    // Tallennetaan ainakin toistaiseksi tiedosto myös tekstimuodossa selvyyden vuoksi
+                    TallennaTXT(tiedostonNimi);
+                    Console.Clear();
+                    Console.WriteLine($"Tallennettu tiedostot {tiedostonNimi}.json ja {tiedostonNimi}.txt.");
+                    Päävalikko.JatketaankoVaiLopetetaanko();
                 }
-                // Tallennetaan ainakin toistaiseksi tiedosto myös tekstimuodossa selvyyden vuoksi
-                TallennaTXT(tiedostonNimi);
-                Console.Clear();
-                Console.WriteLine($"Tallennettu tiedostot {tiedostonNimi}.json ja {tiedostonNimi}.txt.");
-                Päävalikko.JatketaankoVaiLopetetaanko();
             }
             // Jos tallennus ei onnistunut
             catch
             {
                 Console.WriteLine("Tiedoston tallentaminen ei onnistunut, yritä uudestaan");
                 TallennaJSON();
-                return;
-
             }
         }
 
