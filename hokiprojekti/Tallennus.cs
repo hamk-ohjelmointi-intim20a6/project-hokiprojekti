@@ -76,13 +76,14 @@ namespace hokiprojekti
                 Console.Clear();
                 Console.WriteLine($"Tallennettu tiedostot {tiedostonNimi}.json ja {tiedostonNimi}.txt.");
                 Päävalikko.JatketaankoVaiLopetetaanko();
-                Console.Write("");
             }
             // Jos tallennus ei onnistunut
             catch
             {
                 Console.WriteLine("Tiedoston tallentaminen ei onnistunut, yritä uudestaan");
                 TallennaJSON();
+                return;
+
             }
         }
 
