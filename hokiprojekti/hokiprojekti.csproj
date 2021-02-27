@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generointi_1v1.cs" />
-    <Compile Include="kierrokset.cs" />
+    <Compile Include="Kierrokset.cs" />
     <Compile Include="Ottelu.cs" />
     <Compile Include="Pelaajat.cs" />
     <Compile Include="Program.cs" />
