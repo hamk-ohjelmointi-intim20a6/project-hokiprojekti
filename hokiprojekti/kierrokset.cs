@@ -15,11 +15,9 @@ namespace hokiprojekti
 
             while (isRunning)
             {
-
                 Console.WriteLine("Valitse pelattavien kierrosten määrä ja paina ENTER: ");
                 bool tarkistaLuku = int.TryParse(Console.ReadLine(), out int kierrosmäärä);
                 Console.Clear();
-
 
                 if (tarkistaLuku)
                 {
@@ -28,7 +26,6 @@ namespace hokiprojekti
                         Console.WriteLine("Valitsit " + kierrosmäärä + " kierrosta. Onko haluttu kierrosmäärä oikein?");
                         Console.WriteLine("k/e");
                         string onkoOK = Console.ReadLine();
-
 
                         if (onkoOK == "k" | onkoOK == "K")
                         {
@@ -47,16 +44,11 @@ namespace hokiprojekti
                         isRunning = true;
                     }
 
-
                 }
-
-
 
             }
             return 0;
         }
-
-
 
     }
 }
