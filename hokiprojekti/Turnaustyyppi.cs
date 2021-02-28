@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace hokiprojekti
 {
+    //Turnaustyypin valinta tällä hetkellä ohjelmassa tarpeeton.
+    //Päädyimme tekemään vain 1 vs 1 otteluohjelman, mutta tämä on valmiina, jos sitä joskus tarvitsee.
     public class Turnaustyyppi
     {
 
@@ -62,7 +64,6 @@ namespace hokiprojekti
                         }
                     }
 
-
                 }
 
                 else
@@ -70,11 +71,6 @@ namespace hokiprojekti
                     Console.Clear();
                     isRunning = true;
                 }
-
-
-
-
-
 
             }
             return 0;
