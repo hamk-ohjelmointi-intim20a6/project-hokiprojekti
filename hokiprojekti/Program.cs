@@ -24,7 +24,7 @@ namespace hokiprojekti
                 //valitaan haluttu kierrosmäärä peliin
                 Kierrokset kierrokset = new Kierrokset();
 
-                //valitaan turnaustyyppi: 1vs1 tai 2vs2
+                //Tämä osio kommentoitu pois sen tarpeetoomuuden takia.
                 /*Turnaustyyppi turnaustyyppi = new Turnaustyyppi();
                 turnaustyyppi.Turnausvalinta();*/
 
