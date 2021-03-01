@@ -15,14 +15,14 @@ namespace hokiprojekti
             bool isRunning = true;
             
             
-            while (isRunning)
+            while (isRunning) //while luuppaa niin kauan kunnes käyttäjä syöttää numeroksi kelpaavan syötteen
             {
                 Console.WriteLine("Anna pelaajien määrä lukuna ja paina ENTER");
                 bool onkoNumero = int.TryParse(Console.ReadLine(), out int pelaajienLukuMäärä);
                 Console.Clear();
 
 
-                if (onkoNumero)
+                if (onkoNumero) //jos käyttäjän syöte voidaan muuttaa numeroksi kysytään käyttäjältä onko määrä oikein.
                 {
                     Console.WriteLine("Annoit pelaajien määräksi " + pelaajienLukuMäärä + ". Onko pelaajien määrä oikein?");
                     Console.WriteLine("k/e");
@@ -30,13 +30,13 @@ namespace hokiprojekti
                     
 
                   
-                    if (onkoOk == "k" | onkoOk == "K")
+                    if (onkoOk == "k" | onkoOk == "K") //jos käyttäjä on tyytyväinen pelaajien määrään palautetaan pelaajien määrä
                     {
 
                         Console.Clear();
                         return pelaajienLukuMäärä;         
                     }
-                    else
+                    else // jos käyttäjä ei ole tyytyväinen ja painaa muuta kuin k-näppäintä jatketaan kyselyä.
                     {
                         Console.Clear();
                         isRunning = true;
@@ -59,11 +59,11 @@ namespace hokiprojekti
         public static List<string> listaPelaajista(int pelaajienLukumäärä) //Kysytään pelaajien nimet
         {
             bool isRunning = true;
-            List<string> pelaajienNimet = new List<string>();
+            List<string> pelaajienNimet = new List<string>(); //lista pelaajien nimiä varten
             while (isRunning)
             {
                 
-                for (int i = 0; i < pelaajienLukumäärä; i++)
+                for (int i = 0; i < pelaajienLukumäärä; i++) //kysellään nimiä niin monta kertaa kuin pelaajien määrä on määritettyä
                 {
 
                     Console.Write("Anna pelaajan nimi ja paina ENTER: ");
@@ -73,9 +73,9 @@ namespace hokiprojekti
 
                 Console.Clear();
 
-                Console.WriteLine("Pelaajat:");
+                Console.WriteLine("Pelaajat:"); 
 
-                foreach (var pelaaja in pelaajienNimet)
+                foreach (var pelaaja in pelaajienNimet) //Tulostetaan syötetyt pelaajat
                 {
                     Console.WriteLine(pelaaja);
                 }
@@ -84,14 +84,14 @@ namespace hokiprojekti
                 Console.WriteLine("k/e");
                 string onkoOk = Console.ReadLine();
 
-                if (onkoOk == "e" | onkoOk == "E")
+                if (onkoOk == "e" | onkoOk == "E") // Mikäli pelaajien nimiin ei olla tyytyväisiä tyhjennetään lista ja kysytään nimet uusiksi.
                 {
                     pelaajienNimet.Clear();
                     Console.Clear();
                     isRunning = true;
 
                 }
-                else
+                else //jos nimiin ollaan tyytyväisiä palautetaan pelaajienNimet lista.
                 {
                     Console.Clear();
                     return pelaajienNimet;
