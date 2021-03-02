@@ -74,12 +74,12 @@ namespace hokiprojekti
             //jos listaversio ei ole kahdella jaollinen, listan indeksi[0] on toisena
             if (x % 2 == 1)
             {
-                ParitonVersio(testilista, x, KierrosNro);
+                ParitonVersio(testilista, KierrosNro);
             }
 
         }
 
-        public void ParitonVersio(List<string> testilista, int x, int KierrosNro)
+        public void ParitonVersio(List<string> testilista, int KierrosNro)
         {
             string nimi;
 
@@ -90,7 +90,7 @@ namespace hokiprojekti
 
             //tulosta
             Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
-            otteluohjelma1v1.ParillinenKoti(testilista, x, KierrosNro);
+            otteluohjelma1v1.ParillinenKoti(testilista, KierrosNro);
 
         }
 
@@ -110,7 +110,7 @@ namespace hokiprojekti
 
             //tulosta
             Generointi_1v1 otteluohjelma1v1 = new Generointi_1v1();
-            otteluohjelma1v1.ParillinenKoti(testilista, x, KierrosNro);
+            otteluohjelma1v1.ParillinenKoti(testilista, KierrosNro);
         }
 
     }

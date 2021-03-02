@@ -9,7 +9,7 @@ namespace hokiprojekti
     class Generointi_1v1
     {
         //Listan parilliset indekseillä on kotiottelu
-        public void ParillinenKoti(List<string> testilista, int x, int KierrosNro)
+        public void ParillinenKoti(List<string> testilista, int KierrosNro)
         {
             //listan pituudesta saadaan indeksit
             int ListanPituus;
