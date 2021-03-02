@@ -11,15 +11,15 @@ namespace hokiprojekti
         public void Robin(List<string> alkuperainenlista, int rounds)
         {           
             int n = 0;
-            List<string> randomlista = alkuperainenlista.OrderBy(x => Guid.NewGuid()).ToList();
-            List<string> testilista = new List<string>();
+            List<string> testilista = alkuperainenlista.OrderBy(x => Guid.NewGuid()).ToList();
+            //List<string> testilista = new List<string>();
 
             while (n < rounds)
             {
-                testilista.Clear();
-                testilista = randomlista;
+                //testilista.Clear();
+                //testilista = randomlista;
 
-                if (alkuperainenlista.Count % 2 == 1)
+                if (testilista.Count % 2 == 1)
                 {
                     LisaaPelaaja(testilista);
                     Console.WriteLine("Kierros {0}", n + 1);
@@ -27,7 +27,7 @@ namespace hokiprojekti
 
                 }
 
-                else if (alkuperainenlista.Count % 2 == 0)
+                else if (testilista.Count % 2 == 0)
                 {
                     
                     Console.WriteLine("Kierros {0}", n+1);
@@ -53,7 +53,7 @@ namespace hokiprojekti
             players = testilista.Count();
 
             // i = mones listaversio
-            for (var i = 1; i < players; i++)
+            for (var i = 0; i < players; i++)
             {
                 ParillinenPariton(testilista, i);
                 
@@ -69,17 +69,17 @@ namespace hokiprojekti
             var x = i; //x = listaversio
 
             //jos listaversio on kahdella jaollinen, listan indeksi[0] on ensimmäisenä
-            if (x % 2 == 0)
-            {
+            //if (x % 2 == 0)
+            //{
                 ParillinenVersio(testilista, x);
                 
-            }
+            /*}
 
             //jos listaversio ei ole kahdella jaollinen, listan indeksi[0] on toisena
             if (x % 2 == 1)
             {
                 ParitonVersio(testilista, x);
-            }
+            }*/
 
         }
 
