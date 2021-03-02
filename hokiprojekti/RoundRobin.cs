@@ -68,7 +68,7 @@ namespace hokiprojekti
             //jos listaversio on kahdella jaollinen, listan indeksi[0] on ensimmäisenä
             if (x % 2 == 0)
             {
-                ParillinenVersio(testilista, x, KierrosNro);
+                ParillinenVersio(testilista, KierrosNro);
             }
 
             //jos listaversio ei ole kahdella jaollinen, listan indeksi[0] on toisena
@@ -94,7 +94,7 @@ namespace hokiprojekti
 
         }
 
-        public void ParillinenVersio(List<string> testilista, int x, int KierrosNro)
+        public void ParillinenVersio(List<string> testilista, int KierrosNro)
         {
             string nimi;
 
